@@ -47,4 +47,16 @@ if (userTransaction.isEmpty()){
  Transaction updated = transactionService.update(id,userId,dto);
          return ResponseEntity.ok(updated);
 }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteTransaction(@PathVariable String id, Principal principal) {
+        String userId = principal.getName();
+        Optional<Transaction> transaction = transactionService.findByIdAndUserId(id, userId);
+
+        if (transaction.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+
+        transactionService.delete(id, userId);
+        return ResponseEntity.noContent().build();
+    }
 }

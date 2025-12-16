@@ -50,4 +50,9 @@ public Transaction create(TransactionDTO dto , String userId) {
     public Optional<Transaction> findByIdAndUserId(String id, String userId) {
         return transactionRepository.findByIdAndUserId(id, userId);
     }
+    public void delete(String id, String userId) {
+        Transaction existing = transactionRepository.findByIdAndUserId(id, userId)
+                .orElseThrow(() -> new RuntimeException("Transaction not found"));
+        transactionRepository.delete(existing);
+    }
 }
