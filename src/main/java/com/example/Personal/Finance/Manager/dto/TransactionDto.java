@@ -1,5 +1,7 @@
 package com.example.Personal.Finance.Manager.dto;
 
+import com.example.Personal.Finance.Manager.constant.Category;
+import com.example.Personal.Finance.Manager.constant.TransactionType;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,7 +14,9 @@ import java.time.ZonedDateTime;
 @NoArgsConstructor
 public class TransactionDto {
     @NotBlank
-    private String category;
+    private Category category;
+    @NotBlank
+    private TransactionType transactionType;
     private int amount;
     private String account;
     private String description;

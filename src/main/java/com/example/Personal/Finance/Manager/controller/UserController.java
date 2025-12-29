@@ -30,7 +30,7 @@ public class UserController {
          userservice.deleteUser(id);
          return ResponseEntity.noContent().build();
     }
-    @PutMapping("/{id}")
+    @PutMapping("/{id}  ")
     public ResponseEntity<Void> updateUser(@PathVariable String id,@Valid @RequestBody UserDto user){
         userservice.updateUser(id,user);
         return ResponseEntity.ok().build();
