@@ -6,7 +6,6 @@ import com.example.Personal.Finance.Manager.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,8 +16,8 @@ public class UserController {
     @Autowired
     private UserService userservice;
 
-    @PostMapping
-    public User createUser(@Valid @RequestBody UserDto user){
+    @PostMapping("/register")
+    public ResponseEntity<String> createUser(@Valid @RequestBody UserDto user){
         return userservice.createUser(user);
     }
     @GetMapping

@@ -2,7 +2,6 @@ package com.example.Personal.Finance.Manager.controller;
 
 import com.example.Personal.Finance.Manager.dto.TransactionDto;
 import com.example.Personal.Finance.Manager.model.Transaction;
-import com.example.Personal.Finance.Manager.repository.TransactionRepository;
 import com.example.Personal.Finance.Manager.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

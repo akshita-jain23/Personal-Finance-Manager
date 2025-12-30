@@ -23,9 +23,10 @@ public class User {
     @Indexed(unique = true)
     @NotBlank
     private String email;
-//    private String password;
+    private String password;
     public User(UserDto Dto) {
         this.name = Dto.getName();
         this.email = Dto.getEmail();
+        this.password = Dto.getPassword();
     }
 }
